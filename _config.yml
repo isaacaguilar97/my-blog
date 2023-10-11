@@ -64,3 +64,8 @@ exclude:
   - .travis.yml
   - node_modules
   - .git
+
+plugins:
+  - jekyll-paginate
+  - jekyll
+  - em/pure_ruby
