@@ -76,7 +76,8 @@ Now, you might wonder, "Why R for EDA?" R is the perfect tool for the job becaus
     # Check for missing values 
     missing_values <- sum(is.na(data)) 
 
-    # Create a bar plot barplot(missing_values, names.arg = names(data), col = "skyblue", xlab = "Variables", ylab = "Missing Values") 
+    # Create a bar plot 
+    barplot(missing_values, names.arg = names(data), col = "skyblue", xlab = "Variables", ylab = "Missing Values") 
     {% endhighlight %}
 </pre>
 
