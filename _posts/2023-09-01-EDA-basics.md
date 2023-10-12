@@ -202,7 +202,7 @@ Discrete variables, such as 'count,' can also be visualized using histograms. Ho
 
 <p>EDA is often confused with data mining and data wrangling. Data mining focuses on discovering patterns and trends within data, often for predictive modeling. Data wrangling, on the other hand, is about data preparation, transformation, and feature engineering, often as a result of EDA findings. All three phases are interrelated, with EDA laying the initial groundwork. </p>
 
-<p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/magnifier.jpg" alt="Nice picture that represents EDA" width="300"/></p>
+<p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/magnifier.jpg" alt="Nice picture that represents EDA" width="500px"/></p>
 
 <h2 id="Conclusion">EDA is Just Awesome!</h2>
 
