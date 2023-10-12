@@ -32,7 +32,6 @@ Now, you might wonder, "Why R for EDA?" R is the perfect tool for the job becaus
 <p>Begin by loading your dataset into R and taking a preliminary look at its structure, dimensions, and the first few rows. This step gives you a bird's eye view of your data.</p>
 
 <pre>
-    {% raw %}
     {% highlight r %}
     # Lodad libraries
     library(tidyverse)
@@ -44,20 +43,17 @@ Now, you might wonder, "Why R for EDA?" R is the perfect tool for the job becaus
     # Display the first few rows
     head(data)
     {% endhighlight %}
-    {% endraw %}
 </pre>
 
 <p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/head2.png" alt="Displaying Head Function" /></p>
 
 <pre>
-    {% raw %}
     {% highlight r %}
     # Other ways to overview you data:
     glimpse(data) # Lists the variable type of each column
     skim(bike) # Another view of summary
     summary(bike) # Produces result summaries of the results of various model fitting functions.
     {% endhighlight %}
-    {% endraw %}
 </pre>
 
 <h3 id="Step2">Step 2 - Find missing values</h3>
@@ -65,18 +61,15 @@ Now, you might wonder, "Why R for EDA?" R is the perfect tool for the job becaus
 <p>Identify and handle missing data to prevent inaccuracies and biases in your analysis. Visualizations like bar plots or heatmaps can be quite handy in spotting gaps in your data.</p>
 
 <pre>
-    {% raw %}
     {% highlight r %}
     # Show the percent missing in each column
     plot_missing(data)
     {% endhighlight %}
-    {% endraw %}
 </pre>
 
 <p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/missing.png" alt="Displaying missing value percentages"/></p>
 
 <pre>
-    {% raw %}
     {% highlight r %}
     # Other ways to check for missing data
 
@@ -85,7 +78,6 @@ Now, you might wonder, "Why R for EDA?" R is the perfect tool for the job becaus
 
     # Create a bar plot barplot(missing_values, names.arg = names(data), col = "skyblue", xlab = "Variables", ylab = "Missing Values") 
     {% endhighlight %}
-    {% endraw %}
 </pre>
 
 <h3 id="Step3">Categorize Values</h3>
@@ -93,70 +85,60 @@ Now, you might wonder, "Why R for EDA?" R is the perfect tool for the job becaus
 <p>Distinguish between different types of variables - categorical (qualitative), continuous (quantitative), and discrete. This classification will inform if there is a need to change a variable type depending on your intent to use it, like changing a double to a factor or character to a double.</p>
 
 <pre>
-    {% raw %}
     {% highlight r %}
     # Lists the variable type of each column
     glimpse(data)
     {% endhighlight %}
-    {% endraw %}
 </pre>
 
 <p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/glimpse.png" alt="See variables' categories"/></p>
 
 <pre>
-    {% raw %}
     {% highlight r %}
     # Another way to check your data category 
     sapply(data, class) 
     {% endhighlight %}
-    {% endraw %}
 </pre>
 
 <h3 id="Step4">Step 4 – Find Shape of Dataset</h3>
 
 <p>Understanding the shape of your dataset is essential to help you choose the appropriate machine learning or statistical methods to use. The approach varies depending on the type of variable: categorical, continuous, or discrete. Let's explore how to visualize the distribution of these variable types using R.</p>
 
-<p><b>For Continuous Variables:</b></br>
+<p><b>For Continuous Variables:</b>
 For continuous variables like temperature (temp), it's common to use histograms to visualize the distribution. Histograms divide the range of values into bins and display the frequency of data points within each bin. This helps you identify patterns and central tendencies.
 </p>
 
 <pre>
-    {% raw %}
     {% highlight r %}
     # Plot a histogram for a continuous variable (e.g., 'temp') 
     hist(data$temp, col = "lightblue", main = "Temperature Distribution", xlab = "Temperature") 
     {% endhighlight %}
-    {% endraw %}
 </pre>
 
 <p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/temp.png" alt="Continuous variable"/></p>
 
-<p><b>For Categorical Variables:</b></br>
+<p><b>For Categorical Variables:</b>
 Categorical variables, like 'season,' can be explored using bar plots. Bar plots display the frequency of each category, making it easier to understand the distribution of these variables.
 </p>
 
 <pre>
-    {% raw %}
     {% highlight r %}
     # Create a bar plot for a categorical variable (e.g., 'season') 
     barplot(table(data$season), col = "lightgreen", main = "Season Distribution", xlab = "Season", ylab = "Frequency")  
     {% endhighlight %}
-    {% endraw %}
 </pre>
 
 <p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/season.png" alt="Categorical variables"/></p>
 
-<p><b>For Discrete Variables</b></br>
+<p><b>For Discrete Variables</b>
 Discrete variables, such as 'count,' can also be visualized using histograms. However, you might want to customize the bin size to reflect the discrete nature of the data.</p>
 
 
 <pre>
-    {% raw %}
     {% highlight r %}
     # Plot a histogram for a discrete variable (e.g., 'count') 
     hist(data$count, breaks = 20, col = "lightcoral", main = "Count Distribution", xlab = "Count") 
     {% endhighlight %}
-    {% endraw %}
 </pre>
 
 <p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/count.png" alt="Discrete variables"/></p>
@@ -168,23 +150,19 @@ Discrete variables, such as 'count,' can also be visualized using histograms. Ho
 <p>Explore relationships between variables through scatter plots, correlation matrices, or other visualizations. This step is crucial for feature selection in predictive modeling. We usually compare the response variable with the explanatory variables, but also compare between explanatory variables to look for multicollinearity.</p>
 
 <pre>
-    {% raw %}
     {% highlight r %}
     # Create a scatter plot to explore the relationship between 'temp' and 'count' 
     plot(data$temp, data$count, col = "blue", main = "Temperature vs. Count", xlab = "Temperature", ylab = "Count") 
     {% endhighlight %}
-    {% endraw %}
 </pre>
 
 <p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/scatter_plot.png" alt="Show relationship between temp and coutn with scatter plot"/></p>
 
 <pre>
-    {% raw %}
     {% highlight r %}
     # correlation heat map between variables
     plot_correlation(data) 
     {% endhighlight %}
-    {% endraw %}
 </pre>
 
 <p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/corr_heatmap.png" alt="Show correlation heatmap"/></p>
@@ -194,18 +172,15 @@ Discrete variables, such as 'count,' can also be visualized using histograms. Ho
 <p>Spot anomalies that may affect the quality of your analysis by skewing the data and introducing bias to your future models. Tools like box plots, scatter plots, or z-score calculations can help in outlier detection.</p>
 
 <pre>
-    {% raw %}
     {% highlight r %}
     # Create a box plot for 'count' to identify outliers 
     boxplot(data$count, col = "lightgreen", main = "Count Outliers") 
     {% endhighlight %}
-    {% endraw %}
 </pre>
 
 <p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/outliers.png" alt="Show count potential outliers through boxplot"/></p>
 
 <pre>
-    {% raw %}
     {% highlight r %}
     # Other useful visualizations
     hist(data$temp) # Histograms
@@ -221,14 +196,13 @@ Discrete variables, such as 'count,' can also be visualized using histograms. Ho
     IQR <- Q3 - Q1
     outliers <- which(data$temp > Q3 + 1.5 * IQR | data$temp< Q1 - 1.5 * IQR)
     {% endhighlight %}
-    {% endraw %}
 </pre>
 
 <h2 id="Clarifying">Clarifying EDA vs. Data Mining and Data Wrangling</h2>
 
 <p>EDA is often confused with data mining and data wrangling. Data mining focuses on discovering patterns and trends within data, often for predictive modeling. Data wrangling, on the other hand, is about data preparation, transformation, and feature engineering, often as a result of EDA findings. All three phases are interrelated, with EDA laying the initial groundwork. </p>
 
-<p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/magnifier.png" alt="Nice picture that represents EDA"/></p>
+<p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/magnifier.jpg" alt="Nice picture that represents EDA"/></p>
 
 <h2 id="Conclusion">EDA is Just Awesome!</h2>
 
