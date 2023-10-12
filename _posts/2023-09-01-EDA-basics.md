@@ -81,7 +81,7 @@ Now, you might wonder, "Why R for EDA?" R is the perfect tool for the job becaus
     {% endhighlight %}
 </pre>
 
-<h3 id="Step3">Categorize Values</h3>
+<h3 id="Step3">Step 3 - Categorize Values</h3>
 
 <p>Distinguish between different types of variables - categorical (qualitative), continuous (quantitative), and discrete. This classification will inform if there is a need to change a variable type depending on your intent to use it, like changing a double to a factor or character to a double.</p>
 
@@ -146,7 +146,7 @@ Discrete variables, such as 'count,' can also be visualized using histograms. Ho
 
 <p>Exploring the shape of your dataset for different variable types allows you to gain insights into the data's characteristics, whether it's continuous, categorical, or discrete. These visualizations help you understand the data's underlying patterns and guide your subsequent analyses.</p>
 
-<h3 id="Step5">CStep 5 – Identify Relationships in your dataset</h3>
+<h3 id="Step5">Step 5 – Identify Relationships in your dataset</h3>
 
 <p>Explore relationships between variables through scatter plots, correlation matrices, or other visualizations. This step is crucial for feature selection in predictive modeling. We usually compare the response variable with the explanatory variables, but also compare between explanatory variables to look for multicollinearity.</p>
 
@@ -168,7 +168,7 @@ Discrete variables, such as 'count,' can also be visualized using histograms. Ho
 
 <p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/corr_heatmap.png" alt="Show correlation heatmap"/></p>
 
-<h3 id="Step6">Locate Outliers</h3>
+<h3 id="Step6">Step 6 - Locate Outliers</h3>
 
 <p>Spot anomalies that may affect the quality of your analysis by skewing the data and introducing bias to your future models. Tools like box plots, scatter plots, or z-score calculations can help in outlier detection.</p>
 
