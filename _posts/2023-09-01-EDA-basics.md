@@ -129,7 +129,7 @@ For continuous variables like temperature (temp), it's common to use histograms 
     {% endraw %}
 </pre>
 
-<p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/temp.png" alt="Continuous category"/></p>
+<p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/temp.png" alt="Continuous variable"/></p>
 
 <p><b>For Categorical Variables:</b></br>
 Categorical variables, like 'season,' can be explored using bar plots. Bar plots display the frequency of each category, making it easier to understand the distribution of these variables.
@@ -144,8 +144,94 @@ Categorical variables, like 'season,' can be explored using bar plots. Bar plots
     {% endraw %}
 </pre>
 
-<p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/temp.png" alt="Continuous category"/></p>
+<p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/season.png" alt="Categorical variables"/></p>
 
-<h3 id="Step5">Categorize Values</h3>
+<p><b>For Discrete Variables</b></br>
+Discrete variables, such as 'count,' can also be visualized using histograms. However, you might want to customize the bin size to reflect the discrete nature of the data.</p>
 
-<h3 id="Step6">Categorize Values</h3>
+
+<pre>
+    {% raw %}
+    {% highlight r %}
+    # Plot a histogram for a discrete variable (e.g., 'count') 
+    hist(data$count, breaks = 20, col = "lightcoral", main = "Count Distribution", xlab = "Count") 
+    {% endhighlight %}
+    {% endraw %}
+</pre>
+
+<p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/count.png" alt="Discrete variables"/></p>
+
+<p>Exploring the shape of your dataset for different variable types allows you to gain insights into the data's characteristics, whether it's continuous, categorical, or discrete. These visualizations help you understand the data's underlying patterns and guide your subsequent analyses.</p>
+
+<h3 id="Step5">CStep 5 – Identify Relationships in your dataset</h3>
+
+<p>Explore relationships between variables through scatter plots, correlation matrices, or other visualizations. This step is crucial for feature selection in predictive modeling. We usually compare the response variable with the explanatory variables, but also compare between explanatory variables to look for multicollinearity.</p>
+
+<pre>
+    {% raw %}
+    {% highlight r %}
+    # Create a scatter plot to explore the relationship between 'temp' and 'count' 
+    plot(data$temp, data$count, col = "blue", main = "Temperature vs. Count", xlab = "Temperature", ylab = "Count") 
+    {% endhighlight %}
+    {% endraw %}
+</pre>
+
+<p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/scatter_plot.png" alt="Show relationship between temp and coutn with scatter plot"/></p>
+
+<pre>
+    {% raw %}
+    {% highlight r %}
+    # correlation heat map between variables
+    plot_correlation(data) 
+    {% endhighlight %}
+    {% endraw %}
+</pre>
+
+<p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/corr_heatmap.png" alt="Show correlation heatmap"/></p>
+
+<h3 id="Step6">Locate Outliers</h3>
+
+<p>Spot anomalies that may affect the quality of your analysis by skewing the data and introducing bias to your future models. Tools like box plots, scatter plots, or z-score calculations can help in outlier detection.</p>
+
+<pre>
+    {% raw %}
+    {% highlight r %}
+    # Create a box plot for 'count' to identify outliers 
+    boxplot(data$count, col = "lightgreen", main = "Count Outliers") 
+    {% endhighlight %}
+    {% endraw %}
+</pre>
+
+<p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/outliers.png" alt="Show count potential outliers through boxplot"/></p>
+
+<pre>
+    {% raw %}
+    {% highlight r %}
+    # Other useful visualizations
+    hist(data$temp) # Histograms
+    qqnorm(data$temp) # QQ-plots
+
+    # Z-score or Standard score
+    z_scores <- scale(data$temp)
+    outliers <- which(abs(z_scores) > 2)
+
+    # IQR (Interquartile Range) Method
+    Q1 <- quantile(data$temp, 0.25)
+    Q3 <- quantile(data$temp, 0.75)
+    IQR <- Q3 - Q1
+    outliers <- which(data$temp > Q3 + 1.5 * IQR | data$temp< Q1 - 1.5 * IQR)
+    {% endhighlight %}
+    {% endraw %}
+</pre>
+
+<h2 id="Clarifying">Clarifying EDA vs. Data Mining and Data Wrangling</h2>
+
+<p>EDA is often confused with data mining and data wrangling. Data mining focuses on discovering patterns and trends within data, often for predictive modeling. Data wrangling, on the other hand, is about data preparation, transformation, and feature engineering, often as a result of EDA findings. All three phases are interrelated, with EDA laying the initial groundwork. </p>
+
+<p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/magnifier.png" alt="Nice picture that represents EDA"/></p>
+
+<h2 id="Conclusion">EDA is Just Awesome!</h2>
+
+<p>In essence, a well-executed EDA streamlines the entire data analysis process, making it more efficient and reliable. It helps you uncover hidden insights, make informed decisions, and identify potential roadblocks before investing significant time and resources into modeling. The consequence of not conducting a comprehensive EDA can be costly and time-consuming, leading to unreliable results and incorrect conclusions.</p>
+
+<p>In conclusion, Exploratory Data Analysis is the backbone of data science projects. By gaining a deep understanding of your data with R, you can unveil valuable insights, avoid pitfalls, and lay a strong foundation for successful data analysis. Stay tuned for our upcoming articles, where we'll dive deeper into each EDA step with practical examples in R. Happy exploring!</p>
