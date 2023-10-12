@@ -38,3 +38,11 @@ martin:
   url: jekyllt.github.io/jasper
   bio: An American pastor, activist, humanitarian. People know me for leading the African-American Civil Rights movement using nonviolent civil disobedience.
   assets: assets/images/martin.jpg
+isaac:
+  username: aguilaris203
+  name: Isaac aguilar
+  location: Provo, Utah
+  url_full: https://isaacaguilar97.github.io/my-blog/
+  url: isaacaguilar97.github.io/my-blog
+  bio: Data Scientist with experience in project Management and Marketing
+  assets: assets/images/casper.jpg

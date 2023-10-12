@@ -7,8 +7,8 @@ date: 2023-10-11 15:18:00
 tags: Data Science
 subclass: 'post tag-test tag-content'
 logo: 'assets/images/ghost.png'
-author: Isaac
-categories: Isaac
+author: isaac
+categories: isaac
 --- 
 
 <p></p>
