@@ -45,7 +45,7 @@ Now, you might wonder, "Why R for EDA?" R is the perfect tool for the job becaus
     {% endhighlight %}
 </pre>
 
-<p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/head2.png" alt="Displaying Head Function" /></p>
+<p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/head2.png" alt="Displaying Head Function" width="700"/></p>
 
 <pre>
     {% highlight r %}
