@@ -32,7 +32,7 @@ categories: isaac
 
 <h3 id="Clean Up">Making Things Look Pretty</h3>
 
-<p>Since the requests were in JASON format, they looked like dictionaries inside a dictionary, so I turned them in to Data Frames and extracted the information of my interest into new columns. For example, I created a new column with the height in meters, since my height column had a dictionary with height in meters and inches.</p>
+<p>Since the requests were in JSON format, they looked like dictionaries inside a dictionary, so I turned them in to Data Frames and extracted the information of my interest into new columns. For example, I created a new column with the height in meters, since my height column had a dictionary with height in meters and inches.</p>
 
 <pre>
     {% highlight python %}
