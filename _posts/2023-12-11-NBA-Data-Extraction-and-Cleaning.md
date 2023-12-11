@@ -1,6 +1,6 @@
 ---
 layout: post
-cover: 'assets/images/basketball-court.jpg'
+cover: 'assets/images/nba_skills.jpg'
 navegation: True
 title:  NBA Players Data Collection and Cleaning
 date: 2023-12-11 05:56:00
@@ -16,8 +16,6 @@ categories: isaac
 <p>I’ve always loved playing basketball since I was little. My dad used to tell me that the way we play in our favorite sport reflects part of our personality we may not notice in our day-to-day life. He was right! I’ve never been too aggressive in life or in the game, which could be either a good or a bad thing. However, I realized that if my personality could influence the way I play, maybe influencing my skills in basketball could help me in life. That’s why I’ve always tried to play and practice basketball to improve my game skills but also my life skills.</p>
 
 <p>For this project I decided to create a Dashboard in Streamlit that helps anyone interested in improving their basketball skills, know where to focus their training based on their height, weight, and current skills compared to the 2023 NBA players. That way we could spend less time worrying and more time improving. The question that guided this project was “What basketball skills should any person have if he was an NBA player?”.</p>
-
-<p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/nba_skills.jpg" alt="Basketball Player" width="700"/></p>
 
 <h3 id="Data Gathering">Data Gathering</h3>
 
