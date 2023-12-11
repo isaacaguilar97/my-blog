@@ -1,6 +1,6 @@
 ---
 layout: post
-cover: 'assets/images/nba_skills.jpg'
+cover: 'assets/images/basketball_banner.jpg'
 navegation: True
 title:  NBA Players Data Collection and Cleaning
 date: 2023-12-11 05:56:00
