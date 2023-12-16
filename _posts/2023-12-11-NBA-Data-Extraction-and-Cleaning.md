@@ -103,6 +103,6 @@ categories: isaac
 
 <p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/final_table.png" alt="Final Table" width="700"/></p>
 
-<p>When people say data scientists take 80% of their time gathering and cleaning their data, they are not joking. This was a time consuming, but I enjoyed the process, and even more the final outcome. You can look at <a href="https://github.com/isaacaguilar97/you-in-nba">my repository for the complete version of my code</a> if you want to replicate my data. You will also find there the temporary tables I mentioned in this blog as csv files and my final table called “final_table.csv” which I will use for my next blog “Exploratory Data Analysis”, so stay tuned!</p>
+<p>When people say data scientists take 80% of their time gathering and cleaning their data, they are not joking. This was time consuming, but I enjoyed the process, and even more the final outcome. You can look at <a href="https://github.com/isaacaguilar97/you-in-nba">my repository for the complete version of my code</a> if you want to replicate my data. You will also find there the temporary tables I mentioned in this blog as csv files and my final table called “final_table.csv” which I will use for my next blog “My NBA Exploratory Data Analysis”, so stay tuned!</p>
 
 <p>Happy Data Wrangling!</p>
