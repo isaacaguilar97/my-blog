@@ -1,7 +1,7 @@
 ---
 layout: post
 cover: 'assets/images/basketball_banner.jpg'
-navegation: True
+navigation: True
 title:  NBA Players Data Collection and Cleaning
 date: 2023-12-11 05:56:00
 tags: Data Science

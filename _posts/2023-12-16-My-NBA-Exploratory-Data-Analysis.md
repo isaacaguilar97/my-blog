@@ -1,7 +1,7 @@
 ---
 layout: post
 cover: 'assets/images/ball.jpg'
-navegation: True
+navigation: True
 title:  My NBA Exploratory Data Analysis
 date: 2023-12-16 13:44:00
 tags: Data Science
