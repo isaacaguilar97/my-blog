@@ -39,7 +39,7 @@ categories: isaac
 
 <p>First, I wanted to know what were the most relevant stats or skills that someone needed to know so they could improve their game. In my data set, there were 21 stats, which are too many to focus on the same time. In addition, I thought some of them could be redundant, so I decided to explore those a little more through a correlation heatmap.</p>
 
-<p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/heatmap.png" alt="Correlation Heatmap" width="700"/></p>
+<img src="https://isaacaguilar97.github.io/my-blog/assets/images/heatmap.png" alt="Correlation Heatmap" width="700"/>
 
 <p>Looking at the Heatmap we can identify several variables that are highly correlated with others with a high saturation of red. We can see that they presented the most redundancy in information. For example “fgm” and “fga” could be represented by “fgp, “ftm” & “fta” could be represented with “ftp”, similar with “tpm”, “tpa”, “offReb”, “defReb”. </p>
 
@@ -47,7 +47,7 @@ categories: isaac
 
 <p><i>The more points the better your performance?</i></p>
 
-<p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/pointsVSperf.png" alt="Points versus Performance" width="800"/></p>
+<img src="https://isaacaguilar97.github.io/my-blog/assets/images/pointsVSperf.png" alt="Points versus Performance" width="800"/>
 
 <p>I was really curious to see if the people that scored more points would be considered better performing, but based on the scatter plot which compares the “points” and the “plusMinus” variables, and the boxplot with the performance vs points, it looks like there is relationship at all between them. Therefore, we shouldn’t worry about making the most points in a game but on using your skills to help the team win the game. Our skills may be different, but they all are important for the outcome of a match.</p>
 
@@ -55,7 +55,7 @@ categories: isaac
 
 <p>I’ve always thought that simplicity helps things become clearer, so I didn’t want to use weight because I thought it wouldn’t be adding to much insight. Usually, he taller you are, the more you weight, but that is not always they case. So, I wanted to figure it out by creating a scatter plot with these variables.</p>
 
-<p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/weightVSheight.png" alt="Weight vs Height" width="500"/></p>
+<img src="https://isaacaguilar97.github.io/my-blog/assets/images/weightVSheight.png" alt="Weight vs Height" width="500"/>
 
 <p>And it is linear! It’s not perfect but good enough for me to just use height as an input in my dashboard.</p>
 
@@ -63,7 +63,7 @@ categories: isaac
 
 <p>I am pretty sure you have heard some saying to a really big guy; “Hey do you play basketball? You should be a center.” Is that true in the NBA? Would that apply for the other positions as well. Let’s find out.</p>
 
-<p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/heightPRposition.png" alt="Height per Position" width="800"/></p>
+<img src="https://isaacaguilar97.github.io/my-blog/assets/images/heightPRposition.png" alt="Height per Position" width="800"/>
 
 <p>Based on this graph, you are probably checking what positions would be the best for you. And yes, the min height 1.83 meters, but I would just round up my height to that minimum if it is below it. For some heights there is more flexibility as to what positions to have, but others have less options, especially the extremes.</p>
 
@@ -71,7 +71,7 @@ categories: isaac
 
 <p>We just saw that points by themselves don’t matter to be a high performing player. But will position have any influence on that? I doubt it.</p>
 
-<p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/height&performance.png" alt="Height vs Performance" width="800"/></p>
+<img src="https://isaacaguilar97.github.io/my-blog/assets/images/height&performance.png" alt="Height vs Performance" width="800"/>
 
 <p>As expected, there is no relationship at all. As long as you master the skills your position has, you will be alright. In order to take a look at what those skills are for each position, I created bar plots for each position that count the biggest skill for all players with the same position. The following is an example for the Power Forward Position.</p>
 
