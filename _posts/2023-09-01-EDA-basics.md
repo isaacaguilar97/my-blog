@@ -43,7 +43,7 @@ data <- read.csv("bike share.csv")
 head(data)
 ```
 
-<p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/head2.png" alt="Displaying Head Function" width="700"/></p>
+<img src="https://isaacaguilar97.github.io/my-blog/assets/images/head2.png" alt="Displaying Head Function" width="700"/>
 
 ``` r
 # Other ways to overview you data:
@@ -61,7 +61,7 @@ summary(bike) # Produces result summaries of the results of various model fittin
 plot_missing(data)
 ```
 
-<p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/missing.png" alt="Displaying missing value percentages"/></p>
+<img src="https://isaacaguilar97.github.io/my-blog/assets/images/missing.png" alt="Displaying missing value percentages"/>
 
 <p>Other ways to check for missing data:</p>
 
@@ -82,7 +82,7 @@ barplot(missing_values, names.arg = names(data), col = "skyblue", xlab = "Variab
 glimpse(data)
 ```
 
-<p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/glimpse.png" alt="See variables' categories"/></p>
+<img src="https://isaacaguilar97.github.io/my-blog/assets/images/glimpse.png" alt="See variables' categories"/>
 
 ``` r
 # Another way to check your data category 
@@ -102,7 +102,7 @@ For continuous variables like temperature (temp), it's common to use histograms 
 hist(data$temp, col = "lightblue", main = "Temperature Distribution", xlab = "Temperature") 
 ```
 
-<p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/temp.png" alt="Continuous variable"/></p>
+<img src="https://isaacaguilar97.github.io/my-blog/assets/images/temp.png" alt="Continuous variable"/>
 
 <p><b>For Categorical Variables:</b>
 Categorical variables, like 'season,' can be explored using bar plots. Bar plots display the frequency of each category, making it easier to understand the distribution of these variables.
@@ -113,7 +113,7 @@ Categorical variables, like 'season,' can be explored using bar plots. Bar plots
 barplot(table(data$season), col = "lightgreen", main = "Season Distribution", xlab = "Season", ylab = "Frequency")  
 ```
 
-<p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/season.png" alt="Categorical variables"/></p>
+<img src="https://isaacaguilar97.github.io/my-blog/assets/images/season.png" alt="Categorical variables"/>
 
 <p><b>For Discrete Variables</b>
 Discrete variables, such as 'count,' can also be visualized using histograms. However, you might want to customize the bin size to reflect the discrete nature of the data.</p>
@@ -124,7 +124,7 @@ Discrete variables, such as 'count,' can also be visualized using histograms. Ho
 hist(data$count, breaks = 20, col = "lightcoral", main = "Count Distribution", xlab = "Count") 
 ```
 
-<p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/count.png" alt="Discrete variables"/></p>
+<img src="https://isaacaguilar97.github.io/my-blog/assets/images/count.png" alt="Discrete variables"/>
 
 <p>Exploring the shape of your dataset for different variable types allows you to gain insights into the data's characteristics, whether it's continuous, categorical, or discrete. These visualizations help you understand the data's underlying patterns and guide your subsequent analyses.</p>
 
@@ -137,14 +137,14 @@ hist(data$count, breaks = 20, col = "lightcoral", main = "Count Distribution", x
 plot(data$temp, data$count, col = "blue", main = "Temperature vs. Count", xlab = "Temperature", ylab = "Count") 
 ```
 
-<p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/scatter_plot.png" alt="Show relationship between temp and coutn with scatter plot"/></p>
+img src="https://isaacaguilar97.github.io/my-blog/assets/images/scatter_plot.png" alt="Show relationship between temp and coutn with scatter plot"/>
 
 ``` r
 # correlation heat map between variables
 plot_correlation(data) 
 ```
 
-<p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/corr_heatmap.png" alt="Show correlation heatmap"/></p>
+<img src="https://isaacaguilar97.github.io/my-blog/assets/images/corr_heatmap.png" alt="Show correlation heatmap"/>
 
 <h4 id="Step6">Step 6 - Locate Outliers</h4>
 
@@ -155,7 +155,7 @@ plot_correlation(data)
 boxplot(data$count, col = "lightgreen", main = "Count Outliers") 
 ```
 
-<p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/outliers.png" alt="Show count potential outliers through boxplot"/></p>
+<img src="https://isaacaguilar97.github.io/my-blog/assets/images/outliers.png" alt="Show count potential outliers through boxplot"/>
 
 <p>Other ways to identify outliers:</p>
 
@@ -178,7 +178,7 @@ outliers <- which(data$temp > Q3 + 1.5 * IQR | data$temp< Q1 - 1.5 * IQR)
 
 <p>EDA is often confused with <a href="https://www.techtarget.com/searchbusinessanalytics/definition/data-mining">data mining</a> and <a href="https://online.hbs.edu/blog/post/data-wrangling">data wrangling</a>. Data mining focuses on discovering patterns and trends within data, often for predictive modeling. Data wrangling, on the other hand, is about data preparation, transformation, and feature engineering, often as a result of EDA findings. All three phases are interrelated, with EDA laying the initial groundwork. </p>
 
-<p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/magnifier.jpg" alt="Nice picture that represents EDA" width="700px"/></p>
+<img src="https://isaacaguilar97.github.io/my-blog/assets/images/magnifier.jpg" alt="Nice picture that represents EDA" width="700px"/>
 
 <h3 id="Conclusion">EDA is Just Awesome!</h3>
 
