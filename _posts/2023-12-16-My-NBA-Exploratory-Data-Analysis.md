@@ -19,7 +19,7 @@ categories: isaac
 
 <p>Starting with the end in mind is crucial when doing an exploratory data analysis because if you don’t have clear what questions you want to answer with your data, you won’t deliver valuable results with your efforts. It is like sailing a ship without a compass. </p>
 
-<p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/compass.jpg" alt="Compass" width="500"/></p>
+<img src="https://isaacaguilar97.github.io/my-blog/assets/images/compass.jpg" alt="Compass" width="500"/>
 
 <p>If you recall from my previous article, the question that was driving my project was “What basketball skills would a person need to have if it was an NBA player?” However, after having my data ready to be explored, I realized my question was too broad, and decided to ask further questions to refine my direction in my analysis. So, after looking at some of the distributions of my data and having condensed all the questions I was asking myself, I came up with the following:</p>
 
@@ -75,7 +75,7 @@ categories: isaac
 
 <p>As expected, there is no relationship at all. As long as you master the skills your position has, you will be alright. In order to take a look at what those skills are for each position, I created bar plots for each position that count the biggest skill for all players with the same position. The following is an example for the Power Forward Position.</p>
 
-<p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/pf.png" alt="Point Forward" width="500"/></p>
+<img src="https://isaacaguilar97.github.io/my-blog/assets/images/pf.png" alt="Point Forward" width="500"/>
 
 <p>As you can see, shooting from the 2pt area is the biggest strength of most of the NBA players with a position of Point Forward. Followed by good steals and good rebounds. So I would say that if someone is interested in this position they should focus on mastering those 3 skills</p>
 
