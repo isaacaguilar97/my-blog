@@ -31,75 +31,63 @@ Now, you might wonder, "Why R for EDA?" R is the perfect tool for the job becaus
 
 <p>Begin by loading your dataset into R and taking a preliminary look at its structure, dimensions, and the first few rows. This step gives you a bird's eye view of your data.</p>
 
-<pre>
-    {% highlight r %}
-    # Lodad libraries
-    library(tidyverse)
-    library(DataExplorer)
-    
-    # Load the dataset
-    data <- read.csv("bike share.csv")
+``` r
+# Lodad libraries
+library(tidyverse)
+library(DataExplorer)
 
-    # Display the first few rows
-    head(data)
-    {% endhighlight %}
-</pre>
+# Load the dataset
+data <- read.csv("bike share.csv")
+
+# Display the first few rows
+head(data)
+```
 
 <p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/head2.png" alt="Displaying Head Function" width="700"/></p>
 
-<pre>
-    {% highlight r %}
-    # Other ways to overview you data:
-    glimpse(data) # Lists the variable type of each column
-    skim(bike) # Another view of summary
-    summary(bike) # Produces result summaries of the results of various model fitting functions.
-    {% endhighlight %}
-</pre>
+``` r
+# Other ways to overview you data:
+glimpse(data) # Lists the variable type of each column
+skim(bike) # Another view of summary
+summary(bike) # Produces result summaries of the results of various model fitting functions.
+```
 
 <h4 id="Step2">Step 2 - Find missing values</h4>
 
 <p>Identify and handle missing data to prevent inaccuracies and biases in your analysis. Visualizations like bar plots or heatmaps can be quite handy in spotting gaps in your data.</p>
 
-<pre>
-    {% highlight r %}
-    # Show the percent missing in each column
-    plot_missing(data)
-    {% endhighlight %}
-</pre>
+``` r
+# Show the percent missing in each column
+plot_missing(data)
+```
 
 <p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/missing.png" alt="Displaying missing value percentages"/></p>
 
 <p>Other ways to check for missing data:</p>
 
-<pre>
-    {% highlight r %}
-    # Check for missing values 
-    missing_values <- sum(is.na(data)) 
+``` r
+# Check for missing values 
+missing_values <- sum(is.na(data)) 
 
-    # Create a bar plot 
-    barplot(missing_values, names.arg = names(data), col = "skyblue", xlab = "Variables", ylab = "Missing Values") 
-    {% endhighlight %}
-</pre>
+# Create a bar plot 
+barplot(missing_values, names.arg = names(data), col = "skyblue", xlab = "Variables", ylab = "Missing Values") 
+```
 
 <h4 id="Step3">Step 3 - Categorize Values</h4>
 
 <p>Distinguish between different types of variables - categorical (qualitative), continuous (quantitative), and discrete. This classification will inform if there is a need to change a variable type depending on your intent to use it, like changing a double to a factor or character to a double.</p>
 
-<pre>
-    {% highlight r %}
-    # Lists the variable type of each column
-    glimpse(data)
-    {% endhighlight %}
-</pre>
+``` r
+# Lists the variable type of each column
+glimpse(data)
+```
 
 <p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/glimpse.png" alt="See variables' categories"/></p>
 
-<pre>
-    {% highlight r %}
-    # Another way to check your data category 
-    sapply(data, class) 
-    {% endhighlight %}
-</pre>
+``` r
+# Another way to check your data category 
+sapply(data, class) 
+```
 
 <h4 id="Step4">Step 4 – Find Shape of Dataset</h4>
 
@@ -109,12 +97,10 @@ Now, you might wonder, "Why R for EDA?" R is the perfect tool for the job becaus
 For continuous variables like temperature (temp), it's common to use histograms to visualize the distribution. Histograms divide the range of values into bins and display the frequency of data points within each bin. This helps you identify patterns and central tendencies.
 </p>
 
-<pre>
-    {% highlight r %}
-    # Plot a histogram for a continuous variable (e.g., 'temp') 
-    hist(data$temp, col = "lightblue", main = "Temperature Distribution", xlab = "Temperature") 
-    {% endhighlight %}
-</pre>
+``` r
+# Plot a histogram for a continuous variable (e.g., 'temp') 
+hist(data$temp, col = "lightblue", main = "Temperature Distribution", xlab = "Temperature") 
+```
 
 <p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/temp.png" alt="Continuous variable"/></p>
 
@@ -122,12 +108,10 @@ For continuous variables like temperature (temp), it's common to use histograms 
 Categorical variables, like 'season,' can be explored using bar plots. Bar plots display the frequency of each category, making it easier to understand the distribution of these variables.
 </p>
 
-<pre>
-    {% highlight r %}
-    # Create a bar plot for a categorical variable (e.g., 'season') 
-    barplot(table(data$season), col = "lightgreen", main = "Season Distribution", xlab = "Season", ylab = "Frequency")  
-    {% endhighlight %}
-</pre>
+``` r
+# Create a bar plot for a categorical variable (e.g., 'season') 
+barplot(table(data$season), col = "lightgreen", main = "Season Distribution", xlab = "Season", ylab = "Frequency")  
+```
 
 <p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/season.png" alt="Categorical variables"/></p>
 
@@ -135,12 +119,10 @@ Categorical variables, like 'season,' can be explored using bar plots. Bar plots
 Discrete variables, such as 'count,' can also be visualized using histograms. However, you might want to customize the bin size to reflect the discrete nature of the data.</p>
 
 
-<pre>
-    {% highlight r %}
-    # Plot a histogram for a discrete variable (e.g., 'count') 
-    hist(data$count, breaks = 20, col = "lightcoral", main = "Count Distribution", xlab = "Count") 
-    {% endhighlight %}
-</pre>
+``` r
+# Plot a histogram for a discrete variable (e.g., 'count') 
+hist(data$count, breaks = 20, col = "lightcoral", main = "Count Distribution", xlab = "Count") 
+```
 
 <p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/count.png" alt="Discrete variables"/></p>
 
@@ -150,21 +132,17 @@ Discrete variables, such as 'count,' can also be visualized using histograms. Ho
 
 <p>Explore relationships between variables through scatter plots, correlation matrices, or other visualizations. This step is crucial for feature selection in predictive modeling. We usually compare the response variable with the explanatory variables, but also compare between explanatory variables to look for multicollinearity.</p>
 
-<pre>
-    {% highlight r %}
-    # Create a scatter plot to explore the relationship between 'temp' and 'count' 
-    plot(data$temp, data$count, col = "blue", main = "Temperature vs. Count", xlab = "Temperature", ylab = "Count") 
-    {% endhighlight %}
-</pre>
+``` r
+# Create a scatter plot to explore the relationship between 'temp' and 'count' 
+plot(data$temp, data$count, col = "blue", main = "Temperature vs. Count", xlab = "Temperature", ylab = "Count") 
+```
 
 <p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/scatter_plot.png" alt="Show relationship between temp and coutn with scatter plot"/></p>
 
-<pre>
-    {% highlight r %}
-    # correlation heat map between variables
-    plot_correlation(data) 
-    {% endhighlight %}
-</pre>
+``` r
+# correlation heat map between variables
+plot_correlation(data) 
+```
 
 <p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/corr_heatmap.png" alt="Show correlation heatmap"/></p>
 
@@ -172,33 +150,29 @@ Discrete variables, such as 'count,' can also be visualized using histograms. Ho
 
 <p>Spot anomalies that may affect the quality of your analysis by skewing the data and introducing bias to your future models. Tools like box plots, scatter plots, or z-score calculations can help in outlier detection.</p>
 
-<pre>
-    {% highlight r %}
-    # Create a box plot for 'count' to identify outliers 
-    boxplot(data$count, col = "lightgreen", main = "Count Outliers") 
-    {% endhighlight %}
-</pre>
+``` r
+# Create a box plot for 'count' to identify outliers 
+boxplot(data$count, col = "lightgreen", main = "Count Outliers") 
+```
 
 <p><img src="https://isaacaguilar97.github.io/my-blog/assets/images/outliers.png" alt="Show count potential outliers through boxplot"/></p>
 
 <p>Other ways to identify outliers:</p>
 
-<pre>
-    {% highlight r %}
-    hist(data$temp) # Histograms
-    qqnorm(data$temp) # QQ-plots
+``` r
+hist(data$temp) # Histograms
+qqnorm(data$temp) # QQ-plots
 
-    # Z-score or Standard score
-    z_scores <- scale(data$temp)
-    outliers <- which(abs(z_scores) > 2)
+# Z-score or Standard score
+z_scores <- scale(data$temp)
+outliers <- which(abs(z_scores) > 2)
 
-    # IQR (Interquartile Range) Method
-    Q1 <- quantile(data$temp, 0.25)
-    Q3 <- quantile(data$temp, 0.75)
-    IQR <- Q3 - Q1
-    outliers <- which(data$temp > Q3 + 1.5 * IQR | data$temp< Q1 - 1.5 * IQR)
-    {% endhighlight %}
-</pre>
+# IQR (Interquartile Range) Method
+Q1 <- quantile(data$temp, 0.25)
+Q3 <- quantile(data$temp, 0.75)
+IQR <- Q3 - Q1
+outliers <- which(data$temp > Q3 + 1.5 * IQR | data$temp< Q1 - 1.5 * IQR)
+```
 
 <h3 id="Clarifying">Clarifying EDA vs. Data Mining and Data Wrangling</h3>
 
