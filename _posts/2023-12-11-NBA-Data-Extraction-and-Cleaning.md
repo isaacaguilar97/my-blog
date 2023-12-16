@@ -34,23 +34,19 @@ categories: isaac
 
 <p>Since the requests were in JSON format, they looked like dictionaries inside a dictionary, so I turned them in to Data Frames and extracted the information of my interest into new columns. For example, I created a new column with the height in meters, since my height column had a dictionary with height in meters and inches.</p>
 
-<pre>
-    {% highlight python %}
-    p_df['height_m'] = p_df['height'].apply(lambda x: float(x['meters']) if x['meters'] else None)
-    {% endhighlight %}
-</pre>
+``` python
+p_df['height_m'] = p_df['height'].apply(lambda x: float(x['meters']) if x['meters'] else None)
+```
 
 <p>As I was looking at the player’s information, I made sure the columns were in the right formats and removed any rows with missing information since I would not be able to use it for my dashboard.</p>
 
-<pre>
-    {% highlight python %}
-    # Change to Date format
-    p_df['birth_date'] = p_df['birth'].apply(lambda x: pd.to_datetime(x['date']) if x['date'] else None)
-    
-    # Drop NAs
-    p_df = p_df.dropna()
-    {% endhighlight %}
-</pre>
+``` python
+# Change to Date format
+p_df['birth_date'] = p_df['birth'].apply(lambda x: pd.to_datetime(x['date']) if x['date'] else None)
+
+# Drop NAs
+p_df = p_df.dropna()
+```
 
 <p>I also added many columns that would be useful including age, player overall performance, biggest strength and biggest strength and biggest weakness. All of them coming from the other columns. For example, after looking at the “plusMinus” histogram, I was able to determine a range of negative and positive points added on average while the player is on the court to determine his performance on average in a game.</p>
 
@@ -61,43 +57,41 @@ categories: isaac
 <p>There were two columns I was adding the information for each request, “players_df” which contained all my players information, and “stats” which contained all the stats for each game of each player in the season. For the second table, I had to group the information by player and take the mean of the player stats.</p>
 
 
-<pre>
-    {% highlight python %}
-    # Group stats by Player
-    ps = ps.groupby('id').agg({
-        'name': 'first',
-        'team': 'first',
-        'pos': 'first',
-        'game': 'count',
-        'points': 'mean',
-        'min' : 'mean', 
-        'fgm' : 'mean', 
-        'fga': 'mean', 
-        'fgp': 'mean',
-        'ftm' : 'mean', 
-        'fta': 'mean', 
-        'ftp': 'mean', 
-        'tpm': 'mean', 
-        'tpa': 'mean', 
-        'tpp': 'mean', 
-        'offReb': 'mean', 
-        'defReb': 'mean', 
-        'totReb': 'mean',
-        'assists': 'mean', 
-        'pFouls': 'mean', 
-        'steals': 'mean', 
-        'turnovers': 'mean', 
-        'blocks': 'mean',
-        'plusMinus': 'mean'
-    }).reset_index().round()
+``` python
+# Group stats by Player
+ps = ps.groupby('id').agg({
+    'name': 'first',
+    'team': 'first',
+    'pos': 'first',
+    'game': 'count',
+    'points': 'mean',
+    'min' : 'mean', 
+    'fgm' : 'mean', 
+    'fga': 'mean', 
+    'fgp': 'mean',
+    'ftm' : 'mean', 
+    'fta': 'mean', 
+    'ftp': 'mean', 
+    'tpm': 'mean', 
+    'tpa': 'mean', 
+    'tpp': 'mean', 
+    'offReb': 'mean', 
+    'defReb': 'mean', 
+    'totReb': 'mean',
+    'assists': 'mean', 
+    'pFouls': 'mean', 
+    'steals': 'mean', 
+    'turnovers': 'mean', 
+    'blocks': 'mean',
+    'plusMinus': 'mean'
+}).reset_index().round()
 
-    # Add to our existing table
-    stats = pd.concat([stats, ps], ignore_index=True)
+# Add to our existing table
+stats = pd.concat([stats, ps], ignore_index=True)
 
-    # Add my players info with their stats
-    final_df = pd.merge(stats, players_df[['id', 'height_m', 'weight_kg', 'age']])
-    {% endhighlight %}
-</pre>
+# Add my players info with their stats
+final_df = pd.merge(stats, players_df[['id', 'height_m', 'weight_kg', 'age']])
+```
 
 <p>This is how the table looks like at the end:</p>
 
