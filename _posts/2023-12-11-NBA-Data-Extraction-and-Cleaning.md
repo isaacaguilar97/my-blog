@@ -19,7 +19,7 @@ categories: isaac
 
 <h3 id="Data Gathering">Data Gathering</h3>
 
-<p>In order to answer my question, I had to come up with some metrics that NBA players and people in general had in common. The first thing that came to my mind was using physiological metrics like weight, height, age, or anything similar that was recorded for NBA players. Additionally, I needed to find the characteristics or skills that that were easy to measure or compare between NBA players that were applicable to anyone trying to improve their game.</p>
+<p>In order to answer my question, I had to come up with some metrics that NBA players and people in general had in common. The first thing that came to my mind was using physiological metrics like weight, height, age, or anything similar that was recorded for NBA players. Additionally, I needed to find the characteristics or skills that were easy to measure or compare between NBA players that were applicable to anyone trying to improve their game.</p>
 
 <p>After doing some research in various websites including the official NBA official site, I found that the easiest/cheapest and most ethical way to gather the data was through one or multiple free APIs that would give me all the stats and data I was looking for. Fortunately, from the various APIs I looked into, I found one that contained all the information in the <a href="https://rapidapi.com/api-sports/api/api-nba/">rapidapi.com</a> website. Which included easy documentation you could just copy and paste to find the information of interest.</p>
 
