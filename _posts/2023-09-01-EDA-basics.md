@@ -178,10 +178,12 @@ outliers <- which(data$temp > Q3 + 1.5 * IQR | data$temp< Q1 - 1.5 * IQR)
 
 <p>EDA is often confused with <a href="https://www.techtarget.com/searchbusinessanalytics/definition/data-mining">data mining</a> and <a href="https://online.hbs.edu/blog/post/data-wrangling">data wrangling</a>. Data mining focuses on discovering patterns and trends within data, often for predictive modeling. Data wrangling, on the other hand, is about data preparation, transformation, and feature engineering, often as a result of EDA findings. All three phases are interrelated, with EDA laying the initial groundwork. </p>
 
-<img src="https://isaacaguilar97.github.io/my-blog/assets/images/magnifier.jpg" alt="Nice picture that represents EDA" width="700px"/>
+<img src="https://isaacaguilar97.github.io/my-blog/assets/images/magnifier.jpg" alt="Nice picture that represents EDA" width="650px"/>
 
 <h3 id="Conclusion">EDA is Just Awesome!</h3>
 
 <p>In essence, a well-executed EDA streamlines the entire data analysis process, making it more efficient and reliable. It helps you uncover hidden insights, make informed decisions, and identify potential roadblocks before investing significant time and resources into modeling. The consequence of not conducting a comprehensive EDA can be costly and time-consuming, leading to unreliable results and incorrect conclusions.</p>
 
-<p>In conclusion, Exploratory Data Analysis is the backbone of data science projects. Through the power of EDA with R, you've learned how to extract valuable insights, ensure data quality, and pave the way for effective data analysis. As you embark on your data science journey, remember the steps and techniques that have been covered in this article and make sure to practice them on sample datasets and other projects. Happy exploring!</p>
+<p>In conclusion, Exploratory Data Analysis is the backbone of data science projects. Through the power of EDA with R, you've learned how to extract valuable insights, ensure data quality, and pave the way for effective data analysis. As you embark on your data science journey, remember the steps and techniques that have been covered in this article and make sure to practice them on sample datasets and other projects.</p>
+
+<p>Happy exploring!</p>
