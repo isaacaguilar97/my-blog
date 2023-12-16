@@ -4,7 +4,7 @@ cover: 'assets/images/ball.jpg'
 navigation: True
 title:  My NBA Exploratory Data Analysis
 date: 2023-12-16 13:44:00
-tags: Data Science
+tags: Data_Science
 subclass: 'post tag-test tag-content'
 logo: 'assets/images/ghost.png'
 author: isaac

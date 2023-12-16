@@ -4,7 +4,7 @@ cover: 'assets/images/basketball_banner.jpg'
 navigation: True
 title:  NBA Players Data Collection and Cleaning
 date: 2023-12-11 05:56:00
-tags: Data Science
+tags: Data_Science
 subclass: 'post tag-test tag-content'
 logo: 'assets/images/ghost.png'
 author: isaac

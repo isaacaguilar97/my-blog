@@ -4,7 +4,7 @@ cover: 'assets/images/digitization.jpg'
 navigation: True
 title:  Exploratory Data Analysis Basics in R
 date: 2023-10-11 15:18:00
-tags: Data Science
+tags: Data_Science
 subclass: 'post tag-test tag-content'
 logo: 'assets/images/ghost.png'
 author: isaac
